@@ -1,6 +1,6 @@
 # Salary Prediction Machine Learning Model
 
-![Salary Prediction](https://github.com/Atulok0506/Salary_Prediction/blob/main/Screenshot%202023-09-02%20153716.png)
+![Salary Prediction](https://github.com/Atulok0506/Salary_Prediction/blob/main/Screenshot_Model.png)
 
 ![Programming Language](https://img.shields.io/badge/Python-3.10-orange)
 ![Framework](https://img.shields.io/badge/Framework-Flask-red)
