@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Salary Prediction</h1>
+    </header>
+    <div class="container">
+        <form method="POST" action="/predict">
+            <label for="min_salary">MinSalary:</label>
+            <input type="text" name="min_salary" id="min_salary" required value="{% if request.form.min_salary %}{{ request.form.min_salary }}{% endif %}"><br>
+
+            <label for="max_salary">MaxSalary:</label>
+            <input type="text" name="max_salary" id="max_salary" required value="{% if request.form.max_salary %}{{ request.form.max_salary }}{% endif %}"><br>
+
+            <label for="avg_experience">AvgExperience:</label>
+            <input type="text" name="avg_experience" id="avg_experience" required value="{% if request.form.avg_experience %}{{ request.form.avg_experience }}{% endif %}"><br>
+
+            <label for="company">Company:</label>
+            <input type="text" name="company" id="company" required value="{% if request.form.company %}{{ request.form.company }}{% endif %}"><br>
+
+            <label for="job">Job:</label>
+            <input type="text" name="job" id="job" required value="{% if request.form.job %}{{ request.form.job }}{% endif %}"><br>
+
+            <input type="submit" value="Predict">
+        </form>
+
+        <div class="result">
+            {% if prediction %}
+            <p>Salary Prediction: {{ prediction }}</p>
+            {% endif %}
+            {% if error %}
+            <p class="error">Error: {{ error }}</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
