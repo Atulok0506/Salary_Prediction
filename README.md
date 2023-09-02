@@ -1,4 +1,4 @@
-<h1 color="red">Salary Prediction Machine Learning Model</h1>
+<font color="red">Salary Prediction Machine Learning Model</font>
 
 ![Salary Prediction](https://github.com/Atulok0506/Salary_Prediction/blob/main/Screenshot_Model.png)
 
